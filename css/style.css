@@ -41,6 +41,7 @@ body {
 .single-product {
   padding: 10px;
   transition: 0.6s;
+  height: 440px;
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;

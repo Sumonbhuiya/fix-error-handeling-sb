@@ -1,6 +1,7 @@
 const loadProducts = () => {
-  //const url = `https://fakestoreapi.com/products`;
-  fetch('../js/doc.json')
+  const url = `https://fakestoreapi.com/products`;
+  fetch(url)
+    // fetch('../js/doc.json')
     .then((response) => response.json())
     .then((data) => showProducts(data));
 };
@@ -16,12 +17,12 @@ const showProducts = (products) => {
       <div>
         <img class="product-image" src=${image}></img>
       </div>
-        <h3>${product.title}</h3>
+        <h4>${product.title}</h4>
         <p>Category: ${product.category}</p>
         <p>Rating: ${product.rating.rate} (${product.rating.count})</p>
-        <h2>Price: $ ${product.price}</h2>
+        <h3>Price: $ ${product.price}</h3>
         <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-        <button id="details-btn" class="btn btn-danger">Details</button>
+        <button onclick="showDetails(${product.id})" id="details-btn" class="btn btn-danger">Details</button>
       </div>
       `;
     document.getElementById("all-products").appendChild(div);
@@ -53,7 +54,7 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = value.toFixed(2);
+  document.getElementById(id).innerText = value;
 };
 
 // update delivery charge and total Tax
@@ -61,15 +62,15 @@ const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
-    setInnerText("total-tax", priceConverted * 0.2);
+    setInnerText("total-tax", (priceConverted * 0.2).toFixed(2));
   }
   if (priceConverted > 400) {
     setInnerText("delivery-charge", 50);
-    setInnerText("total-tax", priceConverted * 0.3);
+    setInnerText("total-tax", (priceConverted * 0.3).toFixed(2));
   }
   if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
-    setInnerText("total-tax", priceConverted * 0.4);
+    setInnerText("total-tax", (priceConverted * 0.4).toFixed(2));
   }
 };
 
