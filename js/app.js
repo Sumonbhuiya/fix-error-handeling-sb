@@ -1,4 +1,5 @@
 const loadProducts = () => {
+  // api link 
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
     // fetch('../js/doc.json')
@@ -28,6 +29,7 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+// card total show
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
