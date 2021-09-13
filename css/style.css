@@ -5,6 +5,7 @@ body {
 .backgrounds{
   background-color: rgb(216, 212, 212);
 }
+/* search box  */
 .search-field {
   border: none;
   padding: 5px;
@@ -27,6 +28,7 @@ body {
   border-radius: 25px;
   margin-left: 2px;
 }
+/* product card */
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,6 +55,7 @@ body {
   width: 150px;
   height: 150px;
 }
+/* amount card  */
 .cart {
   width: 300px;
   /* border: 1px solid green; */
@@ -69,6 +72,7 @@ body {
 .cart-main {
   padding-right: 30px;
 }
+/* media query */
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
